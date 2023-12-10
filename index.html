@@ -284,7 +284,7 @@
                 <div class="image-hover-overlay background-dark">
                     <div class="image-hover-overlay-content padding">
                     <!-- Text -->
-                    <p class="text-white text-strong text-size-20">Jumu'ah</p>
+                    <p class="text-white text-strong text-size-20">Jumu'ah 1</p>
                     </div>
                 </div>
                 <!-- Photo 
@@ -298,15 +298,42 @@
                      text-gold
                       background-dark"
                   >
-                    جُمُعَة
-                </p>
+                  الجمعة الأولى               </p>
                 </div>
                 <div class="margin-top">
                 <!-- Title -->
-                <h3 id="" class="text-strong">1:45 pm</h3>
+                <h3 id="" class="text-strong">1:30 pm</h3>
                 </div>
             </a>
+<!-- Image 7 -->
+<a class="s-12 m-6 l-six margin-m-bottom-30 background-dark">
+    <div class="image-with-hover-overlay">
+    <div class="image-hover-overlay background-dark">
+        <div class="image-hover-overlay-content padding">
+        <!-- Text -->
+        <p class="text-white text-strong text-size-20">Jumu'ah 2</p>
+        </div>
+    </div>
+    <!-- Photo 
+    <img src="img/isha.png" />-->
+    <p
+        class="text-white 
+        text-extra-strong 
+        text-size-30 
+        text-m-size-10 
+        text-s-size-5
+         text-gold
+          background-dark"
+      >
+      الجمعة الثانية
 
+    </p>
+    </div>
+    <div class="margin-top">
+    <!-- Title -->
+    <h3 id="" class="text-strong">2:30 pm</h3>
+    </div>
+</a>
             </div>
           </div>
         </section>
@@ -536,7 +563,11 @@
         async function fetchTime() {
 
                 var surahNum =   getRandomInt(94,114)
-                let response = await fetch('https://api.aladhan.com/v1/timingsByCity/27-05-2023?city=Plano&country=United+Sates&method=8');
+
+                var todayDate = new Date().toISOString().slice(0, 10);
+console.log(todayDate);
+
+                let response = await fetch('https://api.aladhan.com/v1/timingsByCity/'+todayDate+'?city=Plano&country=United+Sates&method=8');
 
         console.log(response.status); // 200
         console.log(response.statusText); // OK
